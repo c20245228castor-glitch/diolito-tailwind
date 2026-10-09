@@ -4,168 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-
     <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *));
-
-    @layer components {
+          @layer components {
         .btn-primary {
             @apply px-6 py-3 bg-red-800 text-white rounded-xl
-                   hover:bg-orange-400 transition-colors
+                   hover:bg-orange-400
                    dark:bg-slate-700 dark:hover:bg-slate-500;
         }
     }
+
 </style>
 
 </head>
 
-<body class="text-center bg-slate-100 text-gray-800
-             dark:bg-slate-950 dark:text-white
-             transition-colors duration-500">
+<body class="text-center bg-slate-200 text-blue-800
+            dark:bg-slate-800 dark:text-white transition-colors duration-500">
 
-    <!-- Navigation -->
-    <nav class="flex flex-col md:flex-row justify-between items-center
-            gap-4 md:gap-0 mx-4 md:mx-[50px] py-6
-            dark:bg-slate-950">
+    <nav class="flex justify-between items-center p-4 bg-slate-300 dark:bg-slate-900">
+        <h1 class="text-red-800 text-3xl font-bold">Espresso</h1>
 
-        <h2 class="text-3xl font-bold text-orange-600">
-            My Portfolio
-        </h2>
+        <button id="theme-toggle" class="btn-primary">Toggle
+            Theme</button>
+        <script src="script.js"> </script>
+        <script>
+            const toggleDarkButton = document.querySelector('#theme-toggle');
+            const html = document.documentElement;
 
-        <ul class="flex flex-col sm:flex-row items-center gap-5 p-0 m-0 list-none">
-            <li>
-                <a href="#home" class="text-blue-600 dark:text-blue-400 font-semibold
-                      hover:text-red-500 transition-colors duration-500">
-                    Home
-                </a>
-            </li>
+            toggleDarkButton.addEventListener('click', function () {
+                html.classList.toggle('dark');
 
-            <li>
-                <a href="#about" class="text-blue-600 dark:text-blue-400 font-semibold
-                      hover:text-red-500 transition-colors duration-500">
-                    About
-                </a>
-            </li>
+                if (html.classList.contains('dark')) {
+                    toggleDarkButton.textContent = 'Light Mode';
+                } else {
+                    toggleDarkButton.textContent = 'Dark Mode';
+                }
+            });
+        </script>
 
-            <li>
-                <a href="#projects" class="text-blue-600 dark:text-blue-400 font-semibold
-                      hover:text-red-500 transition-colors duration-500">
-                    Projects
-                </a>
-            </li>
 
-            <li>
-                <a href="#contact" class="text-blue-600 dark:text-blue-400 font-semibold
-                      hover:text-red-500 transition-colors duration-500">
-                    Contact
-                </a>
-            </li>
+
+
+        <ul class="flex space-x-4">
+            <li><a href="#home" class="hover:text-red-800 duration-500">Home</a></li>
+            <li><a href="#about" class="hover:text-red-800 duration-500">About</a></li>
+            <li><a href="#projects" class="hover:text-red-800 duration-500">Projects</a></li>
+            <li><a href="#contact" class="hover:text-red-800 duration-500">Contact</a></li>
+
         </ul>
+
     </nav>
+    <header id="home" class="bg-gray-400 text-red-600 py-16 px-6">
+        <h1 class=" text-4xl sm:text-2xl md:text-6xl font-extrabold mb-5">
+            Welcome <span class=" text-yellow-800 font-extrabold">To</span> <span class=" text-red-800 font-extrabold">
+                <br> Espresso</span> <span class=" text-blue-800 font-extrabold">Cafe</span>
 
-    <!-- Hero Section -->
-    <header id="home" class="bg-gray-800 text-white py-16 px-5">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
-            Hello, I'm <span class="text-yellow-300">Diolito </span> <span class="text-red-500"> Castor Jr.</span>!
         </h1>
-
-        <p class="text-lg sm:text-xl mb-6">
-            Welcome to my personal portfolio website!
+        <p class="text-lg sm:text-base md:text-xl text-blue-600 dark:text-white">
+            Making chaos look organized
         </p>
-
-        <a href="#projects"
-            class="inline-block bg-orange-500 hover:bg-red-600 text-white font-semibold py-3 px-5 rounded-xl">
-            View My Projects
+        <a href="#services" class="btn-primary mt-6 inline-block">View Our Services
         </a>
+
     </header>
+    <main class="flex flex-wrap gap-4  md:gap-[30px] p-4 md:p-[50px] m-2 md:m-[50px]">
 
-    <!-- Main Content -->
-    <main class="flex flex-wrap gap-6 md:gap-[30px] p-4 md:p-[50px] m-2 md:m-[50px]">
-
-
-
-        <!-- Projects -->
-        <section id="projects"
+        <section id="about"
             class="flex-1 min-w-0 md:min-w-[280px] border-2 border-red-500 bg-blue-100 rounded-2xl p-6 ">
-            <h2 class="text-3xl md:text-4xl font-semibold text-red-700 mb-4">
-                My Projects
-            </h2>
-
-            <p class="text-gray-800 leading-relaxed">
-                Election web, Start up web, DB management.
+            <h2 class="text-2xl text-blue-800 font-bold mb-4">About us</h2>
+            <p class="text-blue-600 dark:text-gray-600">
+                We are passionate about coffee and creating memorable moments with every cup. Our goal is to serve
+                delicious, quality coffee that brings people together, brightens your day, and makes every sip special.
+                Thank you for being part of our coffee journey!
             </p>
-            <p class="text-blue-800 leading-relaxed">
-                System design, UI/UX design.
-            </p>
-            <p class="text-red-800 font-bold leading-relaxed">
-                and more.
 
+        </section>
+        <section id="services"
+            class="flex-1 min-w-0 md:min-w-[280px] border-2 border-blue-500 bg-blue-100 rounded-2xl p-6">
+            <h2 class="text-2xl text-blue-800 font-bold mb-4">Our Services</h2>
+            <p class="text-blue-600 dark:text-gray-600">
+                Here are some of the services we offer:
+            </p>
+            <ul class="list-disc list-inside text-blue-600 dark:text-gray-600">
+                <li class=" text-red-500 font-semibold">Coffee Brewing</li>
+                <li class=" text-gray-500 font-semibold">Custom Coffee Blends</li>
+                <li class=" text-yellow-600 font-semibold">Cafe Events</li>
+            </ul>
+        </section>
+        <section id="contact"
+            class="flex-1 min-w-0 md:min-w-[280px] border-2 border-red-500 bg-blue-100 rounded-2xl p-6">
+            <h2 class="text-2xl text-blue-800 font-bold mb-4">Contact</h2>
+            <p class="text-blue-600 dark:text-gray-600">
+                Feel free to reach out to us!
+            </p>
+            <p class="text-blue-600 dark:text-gray-600">
+                Email: espresso.cafe@gmail.com
+                <br>
+                Phone: (123) 456-7890
             </p>
         </section>
-
-        <!-- About -->
-        <section id="Services"
-            class="flex-1 min-w-0 md:min-w-[280px] border-2 border-red-500  bg-white rounded-2xl p-6 ">
-            <h2 class="text-3xl md:text-4xl font-semibold text-blue-600 mb-4">
-                Services
-            </h2>
-
-            <p class="text-gray-600 leading-relaxed">
-                Website Creation, System Creation, AI Automation,Database Management, Project Management, Systems
-                Analys
-            </p>
-        </section>
-
-        <!-- Contact -->
-        </section>
-        <!-- Contact -->
-        <section id="contact" class="flex-1 min-w-[280px] border-2 border-red-500  rounded-2xl p-6 max-[600px]:min-w-0">
-            <h2 class="max-[768px]:text-[48px] max-[768px]:text-red-500">
-                Let's build together!
-            </h2>
-            <form action="#" class="flex flex-col gap-5">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" required class="border border-gray-400 rounded-lg p-2">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required class="border border-gray-400 rounded-lg p-2">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required class="border border-gray-400 rounded-lg p-2">
-                </textarea>
-                <button type="submit"
-                    class="bg-gray-900 text-white font-bold py-3 px-6 rounded-xl hover:bg-blue-500 hover:text-white transition-colors duration-500">
-                    Send Message
-                </button>
-            </form>
-        </section>
-
     </main>
-
-    <button id="toggledark" class="btn-primary  ">Dark mode</button>
-    <script src="script.js"></script>
-    <script>
-        const toggleDarkButton = document.querySelector('#toggledark');
-        const html = document.documentElement;
-
-        toggleDarkButton.addEventListener('click', function () {
-            html.classList.toggle('dark');
-
-            if (html.classList.contains('dark')) {
-                toggleDarkButton.textContent = 'Light Mode';
-            } else {
-                toggleDarkButton.textContent = 'Dark Mode';
-            }
-        });
-    </script>
-
-    <footer class="bg-gray-900 text-white py-6 px-4">
-        <p>
-            &copy; 2026 My Portfolio.
-            <span class="text-orange-400">All Rights Reserved.</span>
-        </p>
-    </footer>
 
 </body>
 
