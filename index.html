@@ -4,150 +4,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>My Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <title>Diolito Castor Jr. </title>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+    @layer components {
+        .btn-primary {
+            @apply px-6 py-3 bg-red-800 text-white rounded-xl
+                   hover:bg-orange-400 transition-colors
+                   dark:bg-slate-700 dark:hover:bg-slate-500;
+        }
+    }
+</style>
+
 </head>
 
+<body class="text-center bg-slate-100 text-gray-800
+             dark:bg-slate-950 dark:text-white
+             transition-colors duration-500">
 
-<body class="bg-gray-100 text-gray-900">
+    <!-- Navigation -->
+    <nav class="flex flex-col md:flex-row justify-between items-center
+            gap-4 md:gap-0 mx-4 md:mx-[50px] py-6
+            dark:bg-slate-950">
 
-    <!-- Navbar -->
-    <header class="bg-gray-600 text-white shadow-lg">
-        <nav
-            class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center max-[640px]:flex-col max-[640px]:gap-5">
-            <a href="#" class="text-2xl font-bold">🥔 @potatoo destructo</a>
-            <ul class="flex gap-8 max-[640px]:gap-5">
-                <li><a href="#projects" class="text-blue-300 hover:text-white">Projects</a></li>
-                <li><a href="#services" class="text-blue-300 hover:text-white">Services</a></li>
-                <li><a href="#contact" class="text-blue-300 hover:text-white">Contact</a></li>
-            </ul>
-        </nav>
+        <h2 class="text-3xl font-bold text-orange-600">
+            My Portfolio
+        </h2>
+
+        <ul class="flex flex-col sm:flex-row items-center gap-5 p-0 m-0 list-none">
+            <li>
+                <a href="#home" class="text-blue-600 dark:text-blue-400 font-semibold
+                      hover:text-red-500 transition-colors duration-500">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#about" class="text-blue-600 dark:text-blue-400 font-semibold
+                      hover:text-red-500 transition-colors duration-500">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects" class="text-blue-600 dark:text-blue-400 font-semibold
+                      hover:text-red-500 transition-colors duration-500">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" class="text-blue-600 dark:text-blue-400 font-semibold
+                      hover:text-red-500 transition-colors duration-500">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="bg-gray-800 text-white py-16 px-5">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
+            Hello, I'm <span class="text-yellow-300">Diolito </span> <span class="text-red-500"> Castor Jr.</span>!
+        </h1>
+
+        <p class="text-lg sm:text-xl mb-6">
+            Welcome to my personal portfolio website!
+        </p>
+
+        <a href="#projects"
+            class="inline-block bg-orange-500 hover:bg-red-600 text-white font-semibold py-3 px-5 rounded-xl">
+            View My Projects
+        </a>
     </header>
 
-    <!-- Hero -->
-    <section class="bg-white text-center px-6 py-24 max-[640px]:py-16">
-        <p class="text-blue-600 font-semibold mb-3">Welcome to my portfolio</p>
-        <h1 class="text-5xl md:text-6xl max-[640px]:text-4xl font-bold text-red-600">Iron Man</h1>
-        <p class="mt-6 text-lg text-gray-600">Genius, billionaire, playboy, philanthropist.</p>
-        <div class="mt-8 flex justify-center gap-4 max-[640px]:flex-col max-[640px]:items-center">
-            <a href="#projects"
-                class="bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600">View My
-                Projects</a>
-            <a href="#contact" class="border px-6 py-3 rounded-lg text-blue-700 hover:bg-gray-200">Contact Me</a>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main class="flex flex-wrap gap-6 md:gap-[30px] p-4 md:p-[50px] m-2 md:m-[50px]">
 
-    <main class="max-w-6xl mx-auto px-6 py-20">
+
 
         <!-- Projects -->
-        <section id="projects">
-            <div class="text-center mb-12">
-                <p class="text-blue-600 font-semibold">What I've built</p>
-                <h2 class="text-4xl font-bold mt-2">My Projects</h2>
-                <p class="text-gray-600 mt-4">Technology, defense engineering, and innovation.</p>
-            </div>
+        <section id="projects"
+            class="flex-1 min-w-0 md:min-w-[280px] border-2 border-red-500 bg-blue-100 rounded-2xl p-6 ">
+            <h2 class="text-3xl md:text-4xl font-semibold text-red-700 mb-4">
+                My Projects
+            </h2>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article class="bg-white rounded-xl p-6 shadow-md border border-gray-300 hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold">Mark Suits</h3>
-                    <p class="text-gray-600 mt-3">High-tech exoskeleton armor created by Tony Stark.</p>
-                    <a href="#" class="inline-block mt-5 text-red-600 font-semibold hover:text-blue-800">View Project
-                        →</a>
-                </article>
+            <p class="text-gray-800 leading-relaxed">
+                Election web, Start up web, DB management.
+            </p>
+            <p class="text-blue-800 leading-relaxed">
+                System design, UI/UX design.
+            </p>
+            <p class="text-red-800 font-bold leading-relaxed">
+                and more.
 
-                <article class="bg-white rounded-xl p-6 shadow-md border border-gray-300 hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold">Defense System</h3>
-                    <p class="text-gray-600 mt-3">Smart security, surveillance, and automated threat detection powered
-                        by JARVIS.</p>
-                    <a href="#" class="inline-block mt-5 text-yellow-600 font-semibold hover:text-blue-800">View Project
-                        →</a>
-                </article>
-
-                <article class="bg-white rounded-xl p-6 shadow-md border border-gray-300 hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold">Nanotech</h3>
-                    <p class="text-gray-600 mt-3">Advanced nanotechnology that forms armor and provides protection and
-                        mobility.</p>
-                    <a href="#" class="inline-block mt-5 text-blue-600 font-semibold hover:text-blue-800">View Project
-                        →</a>
-                </article>
-            </div>
+            </p>
         </section>
 
-        <!-- Services -->
-        <section id="services" class="mt-24">
-            <div class="text-center mb-12">
-                <p class="text-blue-600 font-semibold">What I do</p>
-                <h2 class="text-4xl font-bold mt-2">My Services</h2>
-            </div>
+        <!-- About -->
+        <section id="Services"
+            class="flex-1 min-w-0 md:min-w-[280px] border-2 border-red-500  bg-white rounded-2xl p-6 ">
+            <h2 class="text-3xl md:text-4xl font-semibold text-blue-600 mb-4">
+                Services
+            </h2>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-900 text-white rounded-xl p-6">
-                    <h3 class="text-xl font-bold">Website Creation</h3>
-                    <p class="text-gray-400 mt-3">Modern, responsive websites for businesses and personal brands.</p>
-                </div>
-                <div class="bg-gray-900 text-white rounded-xl p-6">
-                    <h3 class="text-xl font-bold">System Development</h3>
-                    <p class="text-gray-400 mt-3">Custom systems built around business requirements.</p>
-                </div>
-                <div class="bg-gray-900 text-white rounded-xl p-6">
-                    <h3 class="text-xl font-bold">AI Automation</h3>
-                    <p class="text-gray-400 mt-3">Automation that reduces repetitive work.</p>
-                </div>
-                <div class="bg-gray-900 text-white rounded-xl p-6">
-                    <h3 class="text-xl font-bold">Database Management</h3>
-                    <p class="text-gray-400 mt-3">Reliable database solutions for applications.</p>
-                </div>
-                <div class="bg-gray-900 text-white rounded-xl p-6">
-                    <h3 class="text-xl font-bold">Project Management</h3>
-                    <p class="text-gray-400 mt-3">Planning and coordinating technology projects.</p>
-                </div>
-                <div class="bg-gray-900 text-white rounded-xl p-6">
-                    <h3 class="text-xl font-bold">Systems Analysis</h3>
-                    <p class="text-gray-400 mt-3">Analyzing processes and identifying improvements.</p>
-                </div>
-            </div>
+            <p class="text-gray-600 leading-relaxed">
+                Website Creation, System Creation, AI Automation,Database Management, Project Management, Systems
+                Analys
+            </p>
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="mt-24 max-w-2xl mx-auto">
-            <div class="text-center mb-10">
-                <p class="text-blue-600 font-semibold">Get in touch</p>
-                <h2 class="text-4xl font-bold mt-2">Let's Build Together</h2>
-                <p class="text-gray-600 mt-4">Have a project or idea? Send me a message.</p>
-            </div>
-
-            <form action="#" class="bg-white p-8 rounded-xl shadow-lg border flex flex-col gap-5">
-                <div>
-                    <label for="name" class="block font-semibold mb-2">Name</label>
-                    <input id="name" name="name" type="text" required
-                        class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
-                </div>
-                <div>
-                    <label for="email" class="block font-semibold mb-2">Email</label>
-                    <input id="email" name="email" type="email" required
-                        class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
-                </div>
-                <div>
-                    <label for="message" class="block font-semibold mb-2">Message</label>
-                    <textarea id="message" name="message" rows="5" required
-                        class="w-full border rounded-lg px-4 py-3 resize-none focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
-                </div>
+        </section>
+        <!-- Contact -->
+        <section id="contact" class="flex-1 min-w-[280px] border-2 border-red-500  rounded-2xl p-6 max-[600px]:min-w-0">
+            <h2 class="max-[768px]:text-[48px] max-[768px]:text-red-500">
+                Let's build together!
+            </h2>
+            <form action="#" class="flex flex-col gap-5">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required class="border border-gray-400 rounded-lg p-2">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required class="border border-gray-400 rounded-lg p-2">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required class="border border-gray-400 rounded-lg p-2">
+                </textarea>
                 <button type="submit"
-                    class="bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition cursor-pointer">Send
-                    Message</button>
+                    class="bg-gray-900 text-white font-bold py-3 px-6 rounded-xl hover:bg-blue-500 hover:text-white transition-colors duration-500">
+                    Send Message
+                </button>
             </form>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 text-center py-8 mt-20">
-        <p>© 2026 Diolito Castor Jr. All rights reserved.</p>
+    <button id="toggledark" class="btn-primary  ">Dark mode</button>
+    <script src="script.js"></script>
+    <script>
+        const toggleDarkButton = document.querySelector('#toggledark');
+        const html = document.documentElement;
+
+        toggleDarkButton.addEventListener('click', function () {
+            html.classList.toggle('dark');
+
+            if (html.classList.contains('dark')) {
+                toggleDarkButton.textContent = 'Light Mode';
+            } else {
+                toggleDarkButton.textContent = 'Dark Mode';
+            }
+        });
+    </script>
+
+    <footer class="bg-gray-900 text-white py-6 px-4">
+        <p>
+            &copy; 2026 My Portfolio.
+            <span class="text-orange-400">All Rights Reserved.</span>
+        </p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
